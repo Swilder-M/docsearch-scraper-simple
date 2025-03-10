@@ -121,6 +121,9 @@ if __name__ == '__main__':
     config_name = 'config'
     if product == 'mqttx':
         config_name = 'mqttx-config'
+    elif product.startswith('datalayers'):
+        config_name = 'datalayers-config'
+
     base_url = os.environ.get('BASE_URL', 'https://docs.emqx.com')
     config_dict = json.load(open(f'{config_name}.json', 'r'))
     if product == 'broker':
